@@ -33,34 +33,28 @@ public class Calculadora {
                         case 1:{
                             System.out.println("Ingrese el primer numero: ");    num1= in.nextDouble();
                             System.out.println("Ingrese el segundo numero: ");   num2= in.nextDouble();
-                            resultado= num1 +num2;
-                            break;
+                            resultado= num1 +num2;  break;
                         }
                         case 2:{
                             System.out.println("Ingrese el primer numero: ");    num1= in.nextDouble();
                             System.out.println("Ingrese el segundo numero: ");   num2= in.nextDouble();
-                            resultado= num1-num2;
-                            break;
+                            resultado= num1-num2;   break;
                         }
                         case 3:{
                             System.out.println("Ingrese el primer numero: ");    num1= in.nextDouble();
                             System.out.println("Ingrese el segundo numero: ");   num2= in.nextDouble();
-                            resultado= num1 *num2;
-                            break;
+                            resultado= num1 *num2;  break;
                         }
                         case 4:{
                             System.out.println("Ingrese el primer numero: ");    num1= in.nextDouble();
+                            //Condicion para division no definida
                             do{
                                 System.out.println("Ingrese el segundo numero: ");   num2= in.nextDouble();
-                                if(num2==0){
-                                    System.out.println("!El dividendo no puede ser 0!");
-                                }
+                                if(num2==0) System.out.println("!El dividendo no puede ser 0!");
                             }while(num2==0);
-                            resultado= num1 /num2;
-                            break;
+                            resultado= num1 /num2;  break;
                         }
-                    }
-                    break;
+                    }   break;
                 }
                 case 2:{
                     do{
@@ -71,18 +65,14 @@ public class Calculadora {
                         case 1:{
                             System.out.println("Ingrese la base: ");    num1= in.nextDouble();
                             System.out.println("Ingrese el exponete: ");   num2= in.nextDouble();
-                            resultado= pow(num1,num2);
-                            break;
+                            resultado= pow(num1,num2);  break;
                         }
                         case 2:{
                             System.out.println("Ingrese la base: ");    num1= in.nextDouble();
                             System.out.println("Ingrese el valor de la raiz: ");   num2= in.nextDouble();
-                            num2= (1/num2);
-                            resultado= pow(num1,num2);
-                            break;
+                            resultado= pow(num1,(1/num2));  break;
                         }
-                    }
-                    break;
+                    }   break;
                 }
                 case 3:{
                     do{  
@@ -93,52 +83,35 @@ public class Calculadora {
                         case 1:{
                             System.out.println("Ingrese el numero: ");    num1= in.nextDouble();
                             resultado= sin(Math.toRadians(num1));
-                            if(resultado<0.000001){
-                                resultado=0;
-                            }
-                            break;
+                            if(resultado<0.000001) resultado=0; break;
                         }
                         case 2:{
                            System.out.println("Ingrese el numero: ");    num1= in.nextDouble();
                             resultado= cos(Math.toRadians(num1));
-                            if(resultado<0.000001){
-                                resultado=0;
-                            }
-                            break;
+                            if(resultado<0.000001) resultado=0; break;
                         }
                         case 3:{
                            System.out.println("Ingrese el numero: ");    num1= in.nextDouble();
                             resultado= tan(Math.toRadians(num1));
-                            if(resultado<0.000001){
-                                resultado=0;
-                            }
-                            break;
+                            if(resultado<0.000001) resultado=0; break;
                         }
-                    }
-                    break;
+                    }   break;
                 }
                 case 4:{
                     System.out.println("Ingrese el valor: ");   num1= in.nextDouble();
                     System.out.println("Ingrese el valor del porcentaje IVA");   num2= in.nextDouble();
-                    
-                    resultado= num1*(num2/100);
-                    
-                    break;
+                    resultado= num1*(num2/100); break;
                 }
             }
             System.out.println("El resultado es: "+ resultado);
+            if(op1==5) break;
+            
             //Pausar pantalla
             System.in.read();
             
-            //
-            if(op1==5){
-                break;
-            }
             //Menu final
             System.out.println("¿Desea continuar?:\n1.SI\n2.No");  op1= in.nextInt();
-            if(op1==2){
-                break;
-            }
+            if(op1==2) break;
         }
     }
 }
