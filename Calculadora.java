@@ -1,14 +1,17 @@
-import java.util.Scanner;
-import java.lang.Math;
+
+package calculadora;
+
+import java.io.IOException;
 import static java.lang.Math.cos;
 import static java.lang.Math.pow;
 import static java.lang.Math.sin;
 import static java.lang.Math.tan;
+import java.util.Scanner;
 
-package calculadora;
 public class Calculadora {
 
-    public static void main(String[] args) {
+    
+    public static void main(String[] args) throws IOException {
        Scanner in = new Scanner(System.in);
        
         int op1=0,op2;
@@ -18,7 +21,7 @@ public class Calculadora {
             
             do{
                 System.out.println("Bienvenido a calculadora\n\n");
-                System.out.println("1.Operacione basicas\n2.Raices y Potencias\n3.Funciones trigonometricas\n4.IVA\n5.Salir");
+                System.out.println("1.Operaciones basicas\n2.Raices y Potencias\n3.Funciones trigonometricas\n4.IVA\n5.Salir");
                 op1 = in.nextInt();
             }while(op1<0 || op1>5);
             
@@ -26,7 +29,7 @@ public class Calculadora {
             switch(op1){
                 case 1:{
                     do{
-                        System.out.println("/n1.Suma\n2.Rest\n3.Multiplicacion\n4.Division\n");   op2= in.nextInt();
+                        System.out.println("1.Suma\n2.Resta\n3.Multiplicacion\n4.Division\n");   op2= in.nextInt();
                     }while(op2<1 || op2>4);
                     
                     
@@ -67,7 +70,7 @@ public class Calculadora {
                 }
                 case 2:{
                     do{  
-                    System.out.println("/n1.Seno\n2.Coseno\n3.Tangente\n");   op2= in.nextInt();
+                    System.out.println("1.Seno\n2.Coseno\n3.Tangente\n");   op2= in.nextInt();
                     }while(op2<1 || op2>3);
                     
                     switch(op2){
@@ -91,7 +94,7 @@ public class Calculadora {
                 }
                 case 3:{
                     do{
-                    System.out.println("/n1.Potencia\n2.Raiz\n");   op2= in.nextInt();
+                    System.out.println("1.Potencia\n2.Raiz\n");   op2= in.nextInt();
                     }while(op2<1 || op2>2);
                      
   
@@ -113,15 +116,29 @@ public class Calculadora {
                     break;
                 }
                 case 4:{
-                    System.out.println("nada");
+                    System.out.println("Ingrese el valor: ");   num1= in.nextDouble();
+                    System.out.println("Ingrese el valor del porcentaje IVA");   num2= in.nextDouble();
+                    
+                    resultado= num1*(num2/100);
+                    
                     break;
                 }
             }
             System.out.println("El resultado es: "+ resultado);
+            
+            System.in.read();
+            
             if(op1==5){
                 break;
             }
+            System.out.println("¿Desea continuar?:\n1.SI\n2.No");  op1= in.nextInt();
+            
+            if(op1==2){
+                break;
+            }
+            
+           
         }
     }
-        
+    
 }
